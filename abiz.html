@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABIZ GLOBAL SERVICES - Digital Marketing Agency</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -22,15 +23,6 @@
             --card-background: #F5F7FA;
             --heading-color: #003366;
             --paragraph-color: #666;
-        }
-        body.dark-theme {
-            --primary-color: #00B4D8;
-            --secondary-color: #003366;
-            --background-color: #121212;
-            --text-color: #FFFFFF;
-            --card-background: #1E1E1E;
-            --heading-color: #FFFFFF;
-            --paragraph-color: #CCCCCC;
         }
         body {
             font-family: 'Poppins', sans-serif; /* Changed font */
@@ -136,41 +128,6 @@
             background-color: var(--primary-color);
             margin: 3px 0;
             transition: 0.3s;
-        }
-
-        /* Theme Switcher */
-        .theme-switcher {
-            display: flex;
-            align-items: center;
-        }
-        #theme-toggle {
-            display: none;
-        }
-        #theme-toggle + label {
-            width: 50px;
-            height: 25px;
-            background-color: #ccc;
-            border-radius: 12.5px;
-            position: relative;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #theme-toggle:checked + label {
-            background-color: var(--primary-color);
-        }
-        #theme-toggle + label::before {
-            content: '';
-            width: 21px;
-            height: 21px;
-            background-color: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s;
-        }
-        #theme-toggle:checked + label::before {
-            transform: translateX(25px);
         }
 
         /* Hero Section - Matching GMS exactly */
@@ -1026,10 +983,6 @@
                 <li><a href="#contact">Contact Us</a></li>
                 <li><a href="#case-studies">Case Studies</a></li>
             </ul>
-            <div class="theme-switcher">
-                <input type="checkbox" id="theme-toggle">
-                <label for="theme-toggle"></label>
-            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -1039,8 +992,8 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content animate__animated animate__fadeInUp">
+    <section id="home" class="hero" data-aos="fade-up">
+        <div class="container hero-content">
             <h1><span id="typed-text"></span></h1>
             <p>Partner with ABIZ GLOBAL SERVICES and scale your business.</p>
             <p class="hero-call">In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
@@ -1049,49 +1002,49 @@
     </section>
 
     <!-- Our Proficiency Section -->
-    <section class="proficiency">
+    <section class="proficiency" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeInUp">Our Proficiency In Online Marketing</h2>
-            <p class="section-subtitle animate__animated animate__fadeInUp">Are you losing customers to your competitors or struggling more and more to stay ahead of the digital curve? A good strategy provides a clear roadmap, consisting of a set of guiding principles to achieve desired goals. Choose a full-service digital marketing firm in Pakistan.</p>
+            <h2 class="section-title">Our Proficiency In Online Marketing</h2>
+            <p class="section-subtitle">Are you losing customers to your competitors or struggling more and more to stay ahead of the digital curve? A good strategy provides a clear roadmap, consisting of a set of guiding principles to achieve desired goals. Choose a full-service digital marketing firm in Pakistan.</p>
 
             <div class="proficiency-grid">
                 <!-- SEO Card -->
-                <div class="proficiency-card animate__animated animate__fadeInUp">
+                <div class="proficiency-card" data-aos="fade-up">
                     <i class="fas fa-search"></i>
                     <h3>Search Engine Optimization – SEO</h3>
                     <p>Local SEO, Technical SEO, Generative Engine Optimization (GEO), SEO Audit Services, Link Building, Ecommerce SEO, Shopify SEO.</p>
                 </div>
 
                 <!-- Web Design Card -->
-                <div class="proficiency-card animate__animated animate__fadeInUp">
+                <div class="proficiency-card" data-aos="fade-up">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Website Design And Development</h3>
                     <p>Custom Website Design, Wordpress Website Design, Ecommerce Website Design, Shopify Web Designers.</p>
                 </div>
 
                 <!-- Social Media Card -->
-                <div class="proficiency-card animate__animated animate__fadeInUp">
+                <div class="proficiency-card" data-aos="fade-up">
                     <i class="fab fa-instagram"></i>
                     <h3>Social Media Marketing Solutions</h3>
                     <p>Social Media Management, Social Media Advertising, Social Media Brand Management.</p>
                 </div>
 
                 <!-- Content Writing Card -->
-                <div class="proficiency-card animate__animated animate__fadeInUp">
+                <div class="proficiency-card" data-aos="fade-up">
                     <i class="fas fa-pen"></i>
                     <h3>Content Writing</h3>
                     <p>Content Writing, Copywriting Services, Ecommerce Optimization.</p>
                 </div>
 
                 <!-- PPC Card -->
-                <div class="proficiency-card animate__animated animate__fadeInUp">
+                <div class="proficiency-card" data-aos="fade-up">
                     <i class="fas fa-ad"></i>
                     <h3>Pay Per Click- PPC</h3>
                     <p>Search Engine Marketing, Google Ads Management Services, Youtube Advertising Services, Lead Generation Services, Franchise PPC Marketing, Enterprise PPC Marketing, Ecommerce PPC.</p>
                 </div>
 
                 <!-- Video Production Card -->
-                <div class="proficiency-card animate__animated animate__fadeInUp">
+                <div class="proficiency-card" data-aos="fade-up">
                     <i class="fas fa-video"></i>
                     <h3>Video Production</h3>
                     <p>Video Production Services, Video Testimonial Services, Product Photography, Drone Video and Photography Services.</p>
@@ -1102,28 +1055,28 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose">
+    <section class="why-choose" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeInUp">Why Choose ABIZ Global Services For Your Digital Marketing Agency?</h2>
-            <p class="section-subtitle animate__animated animate__fadeInUp">We understand that an effective web presence is a key factor in the growth of your business. Therefore, we are committed to transforming our concepts into a special web venture that would inspire you and your clients. Our expert team is here to help solve your challenges and bring your vision to life. We help ensure your customers can easily find your website online by enhancing every aspect of your online presence, website design, SEO, social media, and more. With ABIZ, top digital marketing providers in Pakistan, you will ensure you get the the most out of your marketing dollars and achieve your goals.</p>
+            <h2 class="section-title">Why Choose ABIZ Global Services For Your Digital Marketing Agency?</h2>
+            <p class="section-subtitle">We understand that an effective web presence is a key factor in the growth of your business. Therefore, we are committed to transforming our concepts into a special web venture that would inspire you and your clients. Our expert team is here to help solve your challenges and bring your vision to life. We help ensure your customers can easily find your website online by enhancing every aspect of your online presence, website design, SEO, social media, and more. With ABIZ, top digital marketing providers in Pakistan, you will ensure you get the the most out of your marketing dollars and achieve your goals.</p>
 
             <div class="why-choose-grid">
                 <!-- Benefit 1 -->
-                <div class="why-choose-card animate__animated animate__fadeInUp">
+                <div class="why-choose-card" data-aos="fade-up">
                     <i class="fas fa-trophy"></i>
                     <h3>We Deliver Proven Results</h3>
                     <p>Stop wasting resources on SEO services that fail to meet your expectations. Our marketing agency listens to your business’s unique goals and needs, crafting a tailored strategy that drives results. Our proven digital marketing solutions deliver measurable outcomes, with many clients recouping their investment through new leads in the first month.</p>
                 </div>
 
                 <!-- Benefit 2 -->
-                <div class="why-choose-card animate__animated animate__fadeInUp">
+                <div class="why-choose-card" data-aos="fade-up">
                     <i class="fas fa-shield-alt"></i>
                     <h3>We Are Honest and Ethical</h3>
                     <p>At our people-powered digital marketing agency in Lahore, we uphold integrity, honesty, and respect in every client interaction. We don’t push unnecessary services or use a one-size-fits-all approach. Instead, our internet marketing consultants focus on creating personalized solutions to improve rankings, traffic, conversions, and ROI.</p>
                 </div>
 
                 <!-- Benefit 3 -->
-                <div class="why-choose-card animate__animated animate__fadeInUp">
+                <div class="why-choose-card" data-aos="fade-up">
                     <i class="fas fa-rocket"></i>
                     <h3>We Excel in Digital Marketing</h3>
                     <p>Choosing a digital marketing company in Pakistan that genuinely understands the field is critical. Our expertise ensures your campaigns generate higher traffic, better conversions, and significant growth. We have a proven track record of success, using cutting-edge strategies that consistently deliver tangible results for our clients.</p>
@@ -1133,43 +1086,43 @@
     </section>
 
     <!-- We Solve Your Biggest Challenges Section -->
-    <section class="challenges">
+    <section class="challenges" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeInUp">We Solve Your Biggest Challenges</h2>
+            <h2 class="section-title">We Solve Your Biggest Challenges</h2>
 
             <div class="challenges-grid">
                 <!-- Challenge 1 -->
-                <div class="challenge-item animate__animated animate__fadeInUp">
+                <div class="challenge-item" data-aos="fade-up">
                     <i class="fas fa-search"></i>
                     <p>Not Appearing in Google Maps</p>
                 </div>
 
                 <!-- Challenge 2 -->
-                <div class="challenge-item animate__animated animate__fadeInUp">
+                <div class="challenge-item" data-aos="fade-up">
                     <i class="fas fa-file-alt"></i>
                     <p>Website is Old and Outdated</p>
                 </div>
 
                 <!-- Challenge 3 -->
-                <div class="challenge-item animate__animated animate__fadeInUp">
+                <div class="challenge-item" data-aos="fade-up">
                     <i class="fas fa-filter"></i>
                     <p>Need Better Quality Leads</p>
                 </div>
 
                 <!-- Challenge 4 -->
-                <div class="challenge-item animate__animated animate__fadeInUp">
+                <div class="challenge-item" data-aos="fade-up">
                     <i class="fas fa-money-bill-wave"></i>
                     <p>Need More Revenue</p>
                 </div>
 
                 <!-- Challenge 5 -->
-                <div class="challenge-item animate__animated animate__fadeInUp">
+                <div class="challenge-item" data-aos="fade-up">
                     <i class="fas fa-comment-dots"></i>
                     <p>Need More Google Reviews</p>
                 </div>
 
                 <!-- Challenge 6 -->
-                <div class="challenge-item animate__animated animate__fadeInUp">
+                <div class="challenge-item" data-aos="fade-up">
                     <i class="fas fa-chart-bar"></i>
                     <p>Our Cost Per Lead is Too High</p>
                 </div>
@@ -1178,14 +1131,14 @@
     </section>
 
     <!-- Success Stories Section -->
-    <section class="success-stories">
+    <section class="success-stories" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeInUp">Success Stories</h2>
-            <p class="section-subtitle animate__animated animate__fadeInUp">We’ve helped businesses like yours — and we can help you too.</p>
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">We’ve helped businesses like yours — and we can help you too.</p>
 
             <div class="success-stories-grid">
                 <!-- Story 1 -->
-                <div class="story-card animate__animated animate__fadeInUp">
+                <div class="story-card" data-aos="fade-up">
                     <div class="story-image">Threshold 360</div>
                     <div class="story-content">
                         <h3>Threshold 360</h3>
@@ -1197,7 +1150,7 @@
                 </div>
 
                 <!-- Story 2 -->
-                <div class="story-card animate__animated animate__fadeInUp">
+                <div class="story-card" data-aos="fade-up">
                     <div class="story-image">Rally Up</div>
                     <div class="story-content">
                         <h3>Rally Up</h3>
@@ -1209,7 +1162,7 @@
                 </div>
 
                 <!-- Story 3 -->
-                <div class="story-card animate__animated animate__fadeInUp">
+                <div class="story-card" data-aos="fade-up">
                     <div class="story-image">OEM Parts</div>
                     <div class="story-content">
                         <h3>OEM Parts</h3>
@@ -1222,15 +1175,15 @@
             </div>
 
             <div style="text-align: center; margin-top: 2.5rem;">
-                <a href="#" class="cta-button animate__animated animate__fadeInUp">View All Case Studies</a>
+                <a href="#" class="cta-button" data-aos="fade-up">View All Case Studies</a>
             </div>
         </div>
     </section>
 
     <!-- Industries We Serve Section -->
-    <section class="industries">
+    <section class="industries" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeInUp">Industries We Serve</h2>
+            <h2 class="section-title">Industries We Serve</h2>
 
             <div class="industries-grid-container">
                 <div class="industries-grid">
@@ -1320,60 +1273,60 @@
     </section>
 
     <!-- Ready To Grow Section -->
-    <section class="ready-to-grow">
+    <section class="ready-to-grow" data-aos="fade-up">
         <div class="container">
-            <h2 class="animate__animated animate__fadeInUp">Ready To Grow Your Business?</h2>
-            <p class="animate__animated animate__fadeInUp">If you’re looking for the best marketing agency that delivers real results — not just clicks and impressions — you’re in the right place. Contact us to work with a results-driven digital marketing agency.</p>
+            <h2>Ready To Grow Your Business?</h2>
+            <p>If you’re looking for the best marketing agency that delivers real results — not just clicks and impressions — you’re in the right place. Contact us to work with a results-driven digital marketing agency.</p>
 
             <div class="ready-to-grow-buttons">
-                <a href="#" class="btn btn-white animate__animated animate__fadeInUp">Get Free Proposal</a>
+                <a href="#" class="btn btn-white" data-aos="fade-up">Get Free Proposal</a>
                 <span>OR</span>
-                <a href="#" class="btn btn-cyan animate__animated animate__fadeInUp">Call Us at 0317-4407634</a>
+                <a href="#" class="btn btn-cyan" data-aos="fade-up">Call Us at 0317-4407634</a>
             </div>
         </div>
     </section>
 
     <!-- Recognized Section -->
-    <section class="recognized">
+    <section class="recognized" data-aos="fade-up">
         <div class="container">
             <div class="recognized-content">
-                <h2 class="animate__animated animate__fadeInUp">Recognized for Excellence in Digital Marketing</h2>
-                <p class="animate__animated animate__fadeInUp">Our efficient digital marketing agency combines expertise in WordPress web design and SEO with a passion for delivering proven results. Dedicated to empowering businesses, we craft tailored strategies that drive measurable impact and growth. Whether it’s expanding your email list, boosting eCommerce sales, or enhancing social media engagement, we provide comprehensive services, including web design, SEO, PPC, and content marketing. Our global team of experts excels in creating innovative, custom solutions, steering clear of generic approaches. Built on the core values of relationships and results, we, at our affordable digital marketing services in Lahore, are committed to helping your business thrive with cutting-edge strategies and unmatched dedication.</p>
+                <h2 data-aos="fade-up">Recognized for Excellence in Digital Marketing</h2>
+                <p data-aos="fade-up">Our efficient digital marketing agency combines expertise in WordPress web design and SEO with a passion for delivering proven results. Dedicated to empowering businesses, we craft tailored strategies that drive measurable impact and growth. Whether it’s expanding your email list, boosting eCommerce sales, or enhancing social media engagement, we provide comprehensive services, including web design, SEO, PPC, and content marketing. Our global team of experts excels in creating innovative, custom solutions, steering clear of generic approaches. Built on the core values of relationships and results, we, at our affordable digital marketing services in Lahore, are committed to helping your business thrive with cutting-edge strategies and unmatched dedication.</p>
             </div>
 
             <div class="partners-grid">
                 <!-- Partner 1 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">Google Premier Partner</div>
+                <div class="partner-logo" data-aos="fade-up">Google Premier Partner</div>
                 <!-- Partner 2 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">Meta Business Partner</div>
+                <div class="partner-logo" data-aos="fade-up">Meta Business Partner</div>
                 <!-- Partner 3 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">Microsoft Advertising Partner</div>
+                <div class="partner-logo" data-aos="fade-up">Microsoft Advertising Partner</div>
                 <!-- Partner 4 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">Shopify Partner</div>
+                <div class="partner-logo" data-aos="fade-up">Shopify Partner</div>
                 <!-- Partner 5 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">PHP</div>
+                <div class="partner-logo" data-aos="fade-up">PHP</div>
                 <!-- Partner 6 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">Laravel</div>
+                <div class="partner-logo" data-aos="fade-up">Laravel</div>
                 <!-- Partner 7 -->
-                <div class="partner-logo animate__animated animate__fadeInUp">WooCommerce</div>
+                <div class="partner-logo" data-aos="fade-up">WooCommerce</div>
             </div>
 
             <div style="text-align: center; margin-top: 2.5rem;">
-                <a href="#" class="cta-button animate__animated animate__fadeInUp">Rank Your Site Today</a>
+                <a href="#" class="cta-button" data-aos="fade-up">Rank Your Site Today</a>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" data-aos="fade-up">
         <div class="container">
             <div class="testimonials-content">
-                <h2 class="animate__animated animate__fadeInUp">What Our Clients Are Saying</h2>
+                <h2 data-aos="fade-up">What Our Clients Are Saying</h2>
             </div>
 
             <div class="testimonials-grid">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card animate__animated animate__fadeInUp">
+                <div class="testimonial-card" data-aos="fade-up">
                     <div class="testimonial-client">
                         <img src="https://source.unsplash.com/random/70x70/?portrait&1" alt="Client 1" loading="lazy">
                         <div class="testimonial-client-info">
@@ -1394,7 +1347,7 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card animate__animated animate__fadeInUp">
+                <div class="testimonial-card" data-aos="fade-up">
                     <div class="testimonial-client">
                         <img src="https://source.unsplash.com/random/70x70/?portrait&2" alt="Client 2" loading="lazy">
                         <div class="testimonial-client-info">
@@ -1415,7 +1368,7 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card animate__animated animate__fadeInUp">
+                <div class="testimonial-card" data-aos="fade-up">
                     <div class="testimonial-client">
                         <img src="https://source.unsplash.com/random/70x70/?portrait&3" alt="Client 3" loading="lazy">
                         <div class="testimonial-client-info">
@@ -1439,13 +1392,13 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
+    <section class="faq" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeInUp">FAQ's</h2>
+            <h2 class="section-title">FAQ's</h2>
 
             <div class="faq-grid">
                 <!-- FAQ 1 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <span>How long does it take to see results from digital marketing?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1456,7 +1409,7 @@
                 </div>
 
                 <!-- FAQ 2 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <span>What is the difference between SEO and PPC?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1467,7 +1420,7 @@
                 </div>
 
                 <!-- FAQ 3 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <span>Why is local SEO important for my business?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1478,7 +1431,7 @@
                 </div>
 
                 <!-- FAQ 4 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <span>Do you offer website maintenance services?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1489,7 +1442,7 @@
                 </div>
 
                 <!-- FAQ 5 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <span>Can you help with content creation?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1500,7 +1453,7 @@
                 </div>
 
                 <!-- FAQ 6 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <span>What industries do you specialize in?</span>
                         <i class="fas fa-chevron-down"></i>
@@ -1514,17 +1467,17 @@
     </section>
 
     <!-- Experience Real Results Section - Full Width -->
-    <section class="experience-results-full-width">
+    <section class="experience-results-full-width" data-aos="fade-up">
         <div class="experience-results">
             <div class="container">
                 <div class="experience-results-content">
-                    <h2 class="section-title animate__animated animate__fadeInUp">Contact Us</h2>
-                    <p class="animate__animated animate__fadeInUp">Partner with ABIZ Internet Marketing Agency and scale your business.</p>
-                    <p class="animate__animated animate__fadeInUp">In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
-                    <img src="https://gmsdigitals.b-cdn.net/wp-content/uploads/2025/06/SEO-articles.png" alt="Contact with best digital agency in pakistan" class="experience-results-image" loading="lazy">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>Partner with ABIZ Internet Marketing Agency and scale your business.</p>
+                    <p>In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
+                    <img src="https://gmsdigitals.b-cdn.net/wp-content/uploads/2025/06/SEO-articles.png" alt="Contact with best digital agency in pakistan" class="experience-results-image" loading="lazy" data-aos="fade-up">
                 </div>
 
-                <div class="experience-results-services">
+                <div class="experience-results-services" data-aos="fade-up">
                     <div class="service-category">
                         <h3>SEO</h3>
                         <ul>
@@ -1755,6 +1708,11 @@
         </a>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
     <script>
         // Simple Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -1803,27 +1761,6 @@
                 loop: true
             };
             var typed = new Typed('#typed-text', options);
-
-            // Theme Switcher Logic
-            const themeToggle = document.getElementById('theme-toggle');
-            const currentTheme = localStorage.getItem('theme');
-
-            if (currentTheme) {
-                document.body.classList.add(currentTheme);
-                if (currentTheme === 'dark-theme') {
-                    themeToggle.checked = true;
-                }
-            }
-
-            themeToggle.addEventListener('change', () => {
-                if (themeToggle.checked) {
-                    document.body.classList.add('dark-theme');
-                    localStorage.setItem('theme', 'dark-theme');
-                } else {
-                    document.body.classList.remove('dark-theme');
-                    localStorage.setItem('theme', 'light-theme');
-                }
-            });
         });
     </script>
 
