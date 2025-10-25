@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABIZ GLOBAL SERVICES - Digital Marketing Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif; /* Changed font */
+            color: #333333;
+            background-color: #FFFFFF;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Social Proof Bar */
+        .social-proof-bar {
+            background-color: #003366; /* Dark Blue Primary */
+            color: white;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1100; /* Above header */
+            text-align: center;
+        }
+        .social-proof-content {
+            font-size: 0.9rem; /* Smaller text for bar */
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white; /* White background */
+            color: #003366; /* Blue text */
+            padding: 0.8rem 0; /* Reduced padding */
+            position: sticky;
+            top: 28px; /* Below social proof bar */
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px); /* Glassy effect */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* For scroll effect */
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white on scroll */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px; /* Smaller logo */
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem; /* Reduced gap */
+            flex-wrap: nowrap; /* Prevent wrapping on small screens */
+        }
+        .nav-menu a {
+            color: #003366; /* Blue text */
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem; /* Bigger font */
+            white-space: nowrap; /* Prevent text wrapping */
+            padding: 8px 12px; /* Add some padding */
+            border: 2px solid transparent; /* Initial transparent border */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .nav-menu a:hover {
+            background-color: #003366; /* Blue background on hover */
+            color: white; /* White text on hover */
+            border-color: white; /* White border on hover */
+        }
+        .cta-button-nav {
+            display: inline-block;
+            background-color: white; /* White fill */
+            color: #003366; /* Blue text */
+            padding: 10px 20px; /* Bigger button */
+            text-decoration: none;
+            border: 2px solid #003366; /* Blue border */
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1rem; /* Bigger font */
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflow if text is still too long */
+            text-overflow: ellipsis; /* Add ellipsis if text overflows */
+        }
+        .cta-button-nav:hover {
+            background-color: #003366; /* Blue background on hover */
+            color: white; /* White text on hover */
+            border-color: white; /* White border on hover */
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .bar {
+            width: 20px; /* Smaller hamburger */
+            height: 2px;
+            background-color: #003366; /* Blue bar */
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section - Matching GMS exactly */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://gmsdigitals.b-cdn.net/wp-content/uploads/2025/06/SEO-articles.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px; /* Adjusted for social proof bar and header */
+            display: flex;
+            align-items: center;
+        }
+        .hero-content {
+            max-width: 650px; /* Slightly wider */
+        }
+        .hero h1 {
+            font-size: 3rem; /* Bigger font */
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.3rem; /* Bigger font */
+            margin-bottom: 1.5rem;
+        }
+        .hero-call {
+            margin-top: 1.5rem;
+            font-size: 1.2rem; /* Bigger font */
+            font-weight: bold;
+        }
+        .cta-button-large {
+            display: inline-block;
+            background-color: white; /* White fill */
+            color: #003366; /* Blue text */
+            padding: 14px 28px; /* Bigger button */
+            text-decoration: none;
+            border: 2px solid #003366; /* Blue border */
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem; /* Bigger font */
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button-large:hover {
+            background-color: #003366; /* Blue background on hover */
+            color: white; /* White text on hover */
+            border-color: white; /* White border on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Our Proficiency Section */
+        .proficiency {
+            padding: 120px 0; /* Increased padding */
+            background-color: #F5F7FA; /* Light Gray Background */
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem; /* Bigger font */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem; /* Bigger font */
+            color: #666;
+            max-width: 800px; /* Wider */
+            margin: 0 auto 3rem;
+        }
+        .proficiency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Bigger cards */
+            gap: 2.5rem; /* Increased gap */
+        }
+        .proficiency-card {
+            background-color: white;
+            padding: 2rem; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid #00B4D8; /* Accent border */
+        }
+        .proficiency-card i {
+            font-size: 2.8rem; /* Bigger icon */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1rem; /* Increased gap */
+        }
+        .proficiency-card h3 {
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 0.8rem; /* Increased gap */
+            font-size: 1.5rem; /* Bigger font */
+            font-weight: 600;
+        }
+        .proficiency-card p {
+            font-size: 1rem; /* Bigger font */
+            color: #666;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 120px 0; /* Increased padding */
+            background-color: #FFFFFF;
+        }
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Bigger cards */
+            gap: 2.5rem; /* Increased gap */
+        }
+        .why-choose-card {
+            background-color: #F5F7FA; /* Light Gray Background */
+            padding: 2.5rem; /* Increased padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .why-choose-card i {
+            font-size: 2.8rem; /* Bigger icon */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1.2rem; /* Increased gap */
+        }
+        .why-choose-card h3 {
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1.2rem; /* Increased gap */
+            font-size: 1.5rem; /* Bigger font */
+            font-weight: 600;
+        }
+        .why-choose-card p {
+            font-size: 1.1rem; /* Bigger font */
+            color: #666;
+        }
+
+        /* Challenges Section */
+        .challenges {
+            padding: 120px 0; /* Increased padding */
+            background-color: #F5F7FA; /* Light Gray Background */
+        }
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Bigger items */
+            gap: 1.5rem; /* Increased gap */
+            margin-top: 2.5rem; /* Increased gap */
+        }
+        .challenge-item {
+            background-color: white;
+            padding: 1.8rem; /* Increased padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .challenge-item:hover {
+            transform: translateY(-5px);
+        }
+        .challenge-item i {
+            font-size: 2.2rem; /* Bigger icon */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1rem; /* Increased gap */
+        }
+        .challenge-item p {
+            font-size: 1rem; /* Bigger font */
+            color: #666;
+        }
+
+        /* Success Stories Section */
+        .success-stories {
+            padding: 120px 0; /* Increased padding */
+            background-color: #FFFFFF;
+        }
+        .success-stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Bigger cards */
+            gap: 2.5rem; /* Increased gap */
+        }
+        .story-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .story-image {
+            width: 100%;
+            height: 220px; /* Increased height */
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem; /* Bigger font */
+        }
+        .story-content {
+            padding: 2rem; /* Increased padding */
+        }
+        .story-content h3 {
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 0.8rem; /* Increased gap */
+            font-size: 1.3rem; /* Bigger font */
+            font-weight: 600;
+        }
+        .story-content p {
+            font-size: 1rem; /* Bigger font */
+            color: #666;
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 120px 0; /* Increased padding */
+            background-color: #F5F7FA; /* Light Gray Background */
+            text-align: center;
+        }
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Bigger items */
+            gap: 2.5rem; /* Increased gap */
+            margin-top: 2.5rem; /* Increased gap */
+        }
+        .industry-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem; /* Increased gap */
+        }
+        .industry-item i {
+            font-size: 3.2rem; /* Bigger icon */
+            color: #003366; /* Dark Blue Primary */
+        }
+        .industry-item p {
+            font-size: 1rem; /* Bigger font */
+            color: #666;
+            text-align: center;
+        }
+
+        /* Ready To Grow Section */
+        .ready-to-grow {
+            padding: 120px 0; /* Increased padding */
+            background: linear-gradient(135deg, #003366 0%, #00B4D8 100%); /* Gradient background */
+            color: white;
+            text-align: center;
+        }
+        .ready-to-grow h2 {
+            font-size: 2.8rem; /* Bigger font */
+            margin-bottom: 1.5rem; /* Increased gap */
+            font-weight: 600;
+        }
+        .ready-to-grow p {
+            font-size: 1.3rem; /* Bigger font */
+            max-width: 800px; /* Wider */
+            margin: 0 auto 2.5rem; /* Increased gap */
+        }
+        .ready-to-grow-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* Increased gap */
+            flex-wrap: wrap;
+        }
+        .ready-to-grow-buttons .btn {
+            padding: 14px 28px; /* Bigger button */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem; /* Bigger font */
+            transition: background-color 0.3s ease;
+        }
+        .btn-white {
+            background-color: white;
+            color: #003366; /* Dark Blue Primary */
+        }
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+        .btn-cyan {
+            background-color: #00B4D8; /* Bright Cyan Accent */
+            color: white;
+        }
+        .btn-cyan:hover {
+            background-color: #0096c7; /* Darker Cyan */
+        }
+
+        /* Recognized Section */
+        .recognized {
+            padding: 120px 0; /* Increased padding */
+            background-color: #FFFFFF;
+        }
+        .recognized-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2.5rem; /* Increased gap */
+        }
+        .recognized-content h2 {
+            font-size: 2.8rem; /* Bigger font */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1.5rem; /* Increased gap */
+            font-weight: 600;
+        }
+        .recognized-content p {
+            font-size: 1.3rem; /* Bigger font */
+            color: #666;
+            max-width: 800px; /* Wider */
+            margin: 0 auto;
+        }
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem; /* Increased gap */
+            margin-top: 2.5rem; /* Increased gap */
+        }
+        .partner-logo {
+            width: 120px; /* Bigger logo */
+            height: 60px; /* Bigger logo */
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem; /* Bigger font */
+            border-radius: 5px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 0; /* Increased padding */
+            background-color: #F5F7FA; /* Light Gray Background */
+            text-align: center;
+        }
+        .testimonials-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2.5rem; /* Increased gap */
+        }
+        .testimonials-content h2 {
+            font-size: 2.8rem; /* Bigger font */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1.5rem; /* Increased gap */
+            font-weight: 600;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Bigger cards */
+            gap: 2.5rem; /* Increased gap */
+        }
+        .testimonial-card {
+            background-color: white;
+            padding: 2.5rem; /* Increased padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .testimonial-client {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem; /* Increased gap */
+            margin-bottom: 1.2rem; /* Increased gap */
+        }
+        .testimonial-client img {
+            width: 70px; /* Bigger image */
+            height: 70px; /* Bigger image */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .testimonial-client-info h4 {
+            color: #003366; /* Dark Blue Primary */
+            margin: 0;
+            font-size: 1.2rem; /* Bigger font */
+        }
+        .testimonial-client-info p {
+            color: #666;
+            margin: 0;
+            font-size: 1rem; /* Bigger font */
+        }
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 1.3rem; /* Bigger font */
+            margin-bottom: 1.2rem; /* Increased gap */
+        }
+        .testimonial-text {
+            font-size: 1.1rem; /* Bigger font */
+            color: #666;
+            line-height: 1.6; /* Increased line height */
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 120px 0; /* Increased padding */
+            background-color: #FFFFFF;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Bigger cards */
+            gap: 2.5rem; /* Increased gap */
+        }
+        .faq-item {
+            background-color: #F5F7FA; /* Light Gray Background */
+            padding: 1.5rem; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .faq-item:hover {
+            background-color: #e9ecef; /* Lighter gray on hover */
+        }
+        .faq-question {
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 0.8rem; /* Increased gap */
+            font-size: 1.2rem; /* Bigger font */
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            color: #666;
+            font-size: 1rem; /* Bigger font */
+            padding-top: 0.5rem;
+            display: none; /* Hidden by default */
+        }
+        .faq-item.active .faq-answer {
+            display: block; /* Show when active */
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg); /* Rotate icon when open */
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 120px 0; /* Increased padding */
+            background-color: #FFFFFF;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Bigger cards */
+            gap: 2.5rem; /* Increased gap */
+            margin-top: 2.5rem; /* Increased gap */
+        }
+        .portfolio-card {
+            background-color: #F5F7FA; /* Light Gray Background */
+            padding: 2rem; /* Increased padding */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-8px); /* Reduced hover effect */
+        }
+        .portfolio-card h3 {
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1rem; /* Increased gap */
+            font-size: 1.4rem; /* Bigger font */
+            font-weight: 600;
+        }
+        .portfolio-card p {
+            font-size: 1rem; /* Bigger font */
+            color: #666;
+        }
+
+        /* Experience Real Results Section - Full Width */
+        .experience-results-full-width {
+            width: 100vw; /* Full viewport width */
+            margin-left: calc(-50vw + 50%); /* Center the section */
+            margin-right: calc(-50vw + 50%); /* Center the section */
+            background-color: #F5F7FA; /* Light Gray Background */
+        }
+        .experience-results {
+            padding: 120px 0; /* Increased padding */
+        }
+        .experience-results-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2.5rem; /* Increased gap */
+        }
+        .experience-results-content h2 {
+            font-size: 2.8rem; /* Bigger font */
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 1.5rem; /* Increased gap */
+            font-weight: 600;
+        }
+        .experience-results-content p {
+            font-size: 1.3rem; /* Bigger font */
+            color: #666;
+            max-width: 800px; /* Wider */
+            margin: 0 auto 2rem; /* Increased bottom margin */
+        }
+        .experience-results-image {
+            width: 100%;
+            max-width: 600px; /* Limit image width */
+            margin: 0 auto 2rem; /* Center image and add bottom margin */
+            display: block;
+        }
+        .experience-results-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem; /* Gap between service items */
+            margin: 2rem 0; /* Add top and bottom margin */
+        }
+        .service-category {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .service-category h3 {
+            color: #003366; /* Dark Blue Primary */
+            margin-bottom: 0.8rem; /* Increased gap */
+            font-size: 1.3rem; /* Bigger font */
+            font-weight: 600;
+        }
+        .service-category ul {
+            list-style: none;
+        }
+        .service-category li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem; /* Smaller font for list items */
+        }
+        .service-category li:last-child {
+             border-bottom: none;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* Increased gap */
+            max-width: 650px; /* Wider */
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px; /* Add padding to prevent touching edges */
+        }
+        .form-row {
+            display: flex;
+            gap: 1.2rem; /* Increased gap */
+            flex-wrap: wrap;
+        }
+        .form-group {
+            flex: 1;
+            min-width: 280px; /* Increased min width */
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px; /* Bigger padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1rem; /* Bigger font */
+        }
+        .form-group textarea {
+            min-height: 120px; /* Increased height */
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem; /* Increased gap */
+            margin: 1.2rem 0; /* Increased margin */
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem; /* Increased gap */
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+        }
+        .submit-button {
+            padding: 14px 24px; /* Bigger button */
+            background-color: #003366; /* Dark Blue Primary */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem; /* Bigger font */
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #002244; /* Darker Blue */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366; /* Dark Blue Primary */
+            color: white;
+            padding: 3.5rem 0 2rem; /* Increased padding */
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2.5rem; /* Increased gap */
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 220px; /* Increased min width */
+        }
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.2rem; /* Increased gap */
+            font-size: 1.3rem; /* Bigger font */
+            font-weight: 600;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column li {
+            margin-bottom: 0.7rem; /* Increased gap */
+        }
+        .footer-column a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 1rem; /* Bigger font */
+            transition: color 0.3s ease;
+        }
+        .footer-column a:hover {
+            color: #00B4D8; /* Bright Cyan Accent */
+        }
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem; /* Increased gap */
+        }
+        .footer-contact i {
+            color: #00B4D8; /* Bright Cyan Accent */
+        }
+        .footer-social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .footer-social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social-icons a:hover {
+            color: #00B4D8; /* Bright Cyan Accent */
+        }
+        .footer-bottom {
+            margin-top: 2.5rem; /* Increased gap */
+            padding-top: 1.2rem; /* Increased padding */
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .footer-bottom p {
+            font-size: 1rem; /* Bigger font */
+        }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+        .whatsapp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border-radius: 50%;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-link:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animation Classes */
+        .animate__animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .social-proof-bar {
+                position: static; /* Remove sticky for small screens */
+            }
+            header {
+                top: 0; /* Adjust header position */
+                padding: 0.6rem 0; /* Smaller padding on mobile */
+            }
+            .hero {
+                padding: 150px 0 100px; /* Adjust for non-sticky social proof */
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero h1 {
+                font-size: 2.4rem; /* Smaller on mobile */
+            }
+            .hero p {
+                font-size: 1.1rem; /* Smaller on mobile */
+            }
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px; /* Adjust based on header height */
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+                z-index: 999;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .section-title {
+                font-size: 2.2rem; /* Smaller on mobile */
+            }
+            .section-subtitle {
+                font-size: 1.1rem; /* Smaller on mobile */
+            }
+            .proficiency-grid {
+                grid-template-columns: 1fr; /* Stack services on mobile */
+            }
+            .why-choose-grid,
+            .success-stories-grid,
+            .testimonials-grid,
+            .faq-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .experience-results-services {
+                grid-template-columns: 1fr; /* Stack services on mobile */
+            }
+            .form-row {
+                flex-direction: column;
+            }
+            .footer-container {
+                flex-direction: column;
+            }
+            /* Fix CTA Button on Mobile */
+            .cta-button-nav {
+                padding: 8px 16px; /* Smaller padding on mobile */
+                font-size: 0.9rem; /* Smaller font on mobile */
+            }
+            .cta-button-large {
+                padding: 12px 24px; /* Smaller padding on mobile */
+                font-size: 1.1rem; /* Smaller font on mobile */
+            }
+            /* Ensure navigation text fits */
+            .nav-menu a {
+                font-size: 1.1rem; /* Bigger font on mobile */
+                padding: 6px 10px; /* Smaller padding on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <div class="container social-proof-content">
+            <i class="fas fa-star"></i> Trusted by 500+ Businesses in Pakistan
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header id="mainHeader">
+        <div class="container nav-container">
+            <div class="logo">
+                <!-- Replace 'logo.png' with your actual logo file path -->
+                <img src="assets/images/logo.png" alt="ABIZ GLOBAL SERVICES Logo" width="150">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li> <!-- Added Portfolio link -->
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+            </ul>
+            <a href="#" class="cta-button-nav">BOOK YOUR FREE STRATEGY CALL</a> <!-- Added CTA button -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content animate__animated animate__fadeInUp">
+            <h1>Experience Real Results</h1>
+            <p>Partner with ABIZ GLOBAL SERVICES and scale your business.</p>
+            <p class="hero-call">In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
+            <a href="#" class="cta-button-large">Rank Your Site Today</a>
+        </div>
+    </section>
+
+    <!-- Our Proficiency Section -->
+    <section class="proficiency">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">Our Proficiency In Online Marketing</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">Are you losing customers to your competitors or struggling more and more to stay ahead of the digital curve? A good strategy provides a clear roadmap, consisting of a set of guiding principles to achieve desired goals. Choose a full-service digital marketing firm in Pakistan.</p>
+
+            <div class="proficiency-grid">
+                <!-- SEO Card -->
+                <div class="proficiency-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-search"></i>
+                    <h3>Search Engine Optimization – SEO</h3>
+                    <p>Local SEO, Technical SEO, Generative Engine Optimization (GEO), SEO Audit Services, Link Building, Ecommerce SEO, Shopify SEO.</p>
+                </div>
+
+                <!-- Web Design Card -->
+                <div class="proficiency-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Website Design And Development</h3>
+                    <p>Custom Website Design, Wordpress Website Design, Ecommerce Website Design, Shopify Web Designers.</p>
+                </div>
+
+                <!-- Social Media Card -->
+                <div class="proficiency-card animate__animated animate__fadeInUp">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Social Media Marketing Solutions</h3>
+                    <p>Social Media Management, Social Media Advertising, Social Media Brand Management.</p>
+                </div>
+
+                <!-- Content Writing Card -->
+                <div class="proficiency-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-pen"></i>
+                    <h3>Content Writing</h3>
+                    <p>Content Writing, Copywriting Services, Ecommerce Optimization.</p>
+                </div>
+
+                <!-- PPC Card -->
+                <div class="proficiency-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-ad"></i>
+                    <h3>Pay Per Click- PPC</h3>
+                    <p>Search Engine Marketing, Google Ads Management Services, Youtube Advertising Services, Lead Generation Services, Franchise PPC Marketing, Enterprise PPC Marketing, Ecommerce PPC.</p>
+                </div>
+
+                <!-- Video Production Card -->
+                <div class="proficiency-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Production</h3>
+                    <p>Video Production Services, Video Testimonial Services, Product Photography, Drone Video and Photography Services.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">Why Choose ABIZ Global Services For Your Digital Marketing Agency?</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">We understand that an effective web presence is a key factor in the growth of your business. Therefore, we are committed to transforming our concepts into a special web venture that would inspire you and your clients. Our expert team is here to help solve your challenges and bring your vision to life. We help ensure your customers can easily find your website online by enhancing every aspect of your online presence, website design, SEO, social media, and more. With ABIZ, top digital marketing providers in Pakistan, you will ensure you get the the most out of your marketing dollars and achieve your goals.</p>
+
+            <div class="why-choose-grid">
+                <!-- Benefit 1 -->
+                <div class="why-choose-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-trophy"></i>
+                    <h3>We Deliver Proven Results</h3>
+                    <p>Stop wasting resources on SEO services that fail to meet your expectations. Our marketing agency listens to your business’s unique goals and needs, crafting a tailored strategy that drives results. Our proven digital marketing solutions deliver measurable outcomes, with many clients recouping their investment through new leads in the first month.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="why-choose-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>We Are Honest and Ethical</h3>
+                    <p>At our people-powered digital marketing agency in Lahore, we uphold integrity, honesty, and respect in every client interaction. We don’t push unnecessary services or use a one-size-fits-all approach. Instead, our internet marketing consultants focus on creating personalized solutions to improve rankings, traffic, conversions, and ROI.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="why-choose-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-rocket"></i>
+                    <h3>We Excel in Digital Marketing</h3>
+                    <p>Choosing a digital marketing company in Pakistan that genuinely understands the field is critical. Our expertise ensures your campaigns generate higher traffic, better conversions, and significant growth. We have a proven track record of success, using cutting-edge strategies that consistently deliver tangible results for our clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- We Solve Your Biggest Challenges Section -->
+    <section class="challenges">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">We Solve Your Biggest Challenges</h2>
+
+            <div class="challenges-grid">
+                <!-- Challenge 1 -->
+                <div class="challenge-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-search"></i>
+                    <p>Not Appearing in Google Maps</p>
+                </div>
+
+                <!-- Challenge 2 -->
+                <div class="challenge-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-file-alt"></i>
+                    <p>Website is Old and Outdated</p>
+                </div>
+
+                <!-- Challenge 3 -->
+                <div class="challenge-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-filter"></i>
+                    <p>Need Better Quality Leads</p>
+                </div>
+
+                <!-- Challenge 4 -->
+                <div class="challenge-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>Need More Revenue</p>
+                </div>
+
+                <!-- Challenge 5 -->
+                <div class="challenge-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-comment-dots"></i>
+                    <p>Need More Google Reviews</p>
+                </div>
+
+                <!-- Challenge 6 -->
+                <div class="challenge-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>Our Cost Per Lead is Too High</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">Success Stories</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">We’ve helped businesses like yours — and we can help you too.</p>
+
+            <div class="success-stories-grid">
+                <!-- Story 1 -->
+                <div class="story-card animate__animated animate__fadeInUp">
+                    <div class="story-image">Threshold 360</div>
+                    <div class="story-content">
+                        <h3>Threshold 360</h3>
+                        <p><strong>Challenge:</strong> SEO Optimization</p>
+                        <p><strong>Solution:</strong> Local SEO strategy with targeted social ads customers.</p>
+                        <p><strong>Results:</strong> 3x ROAS, 120% more bookings in 60 days</p>
+                        <p>"GMS Digitals truly understands local SEO. Our bookings surged, and our visibility skyrocketed — couldn’t ask for better!"</p>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="story-card animate__animated animate__fadeInUp">
+                    <div class="story-image">Rally Up</div>
+                    <div class="story-content">
+                        <h3>Rally Up</h3>
+                        <p><strong>Challenge:</strong> Internet Marketing</p>
+                        <p><strong>Solution:</strong> SEO improvements + social media ad campaigns</p>
+                        <p><strong>Results:</strong> 3x ROAS, higher traffic and engagement</p>
+                        <p>"Their strategy brought measurable impact. GMS took our online presence to the next level — amazing team and flawless execution."</p>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="story-card animate__animated animate__fadeInUp">
+                    <div class="story-image">OEM Parts</div>
+                    <div class="story-content">
+                        <h3>OEM Parts</h3>
+                        <p><strong>Challenge:</strong> E-Com SEO</p>
+                        <p><strong>Solution:</strong> Product SEO + paid ads for niche targeting</p>
+                        <p><strong>Results:</strong> 3x ROAS, 120% rise in sales and inquiries</p>
+                        <p>"Our e-commerce store went from invisible to competitive. GMS helped us get real traction in a tough market."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="#" class="cta-button animate__animated animate__fadeInUp">View All Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve Section -->
+    <section class="industries">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">Industries We Serve</h2>
+
+            <div class="industries-grid">
+                <!-- Industry 1 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-car"></i>
+                    <p>AUTOMOTIVE</p>
+                </div>
+
+                <!-- Industry 2 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-headset"></i>
+                    <p>LEGAL & CONSULTING</p>
+                </div>
+
+                <!-- Industry 3 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>E-COMMERCE & RETAIL</p>
+                </div>
+
+                <!-- Industry 4 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>EDUCATION & E-LEARNING</p>
+                </div>
+
+                <!-- Industry 5 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-film"></i>
+                    <p>ENTERTAINMENT & MEDIA</p>
+                </div>
+
+                <!-- Industry 6 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-tshirt"></i>
+                    <p>FASHION & BEAUTY</p>
+                </div>
+
+                <!-- Industry 7 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-dollar-sign"></i>
+                    <p>FINANCE & INSURANCE</p>
+                </div>
+
+                <!-- Industry 8 -->
+                <div class="industry-item animate__animated animate__fadeInUp">
+                    <i class="fas fa-dumbbell"></i>
+                    <p>FITNESS & SPORTS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready To Grow Section -->
+    <section class="ready-to-grow">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">Ready To Grow Your Business?</h2>
+            <p class="animate__animated animate__fadeInUp">If you’re looking for the best marketing agency that delivers real results — not just clicks and impressions — you’re in the right place. Contact us to work with a results-driven digital marketing agency.</p>
+
+            <div class="ready-to-grow-buttons">
+                <a href="#" class="btn btn-white animate__animated animate__fadeInUp">Get Free Proposal</a>
+                <span>OR</span>
+                <a href="#" class="btn btn-cyan animate__animated animate__fadeInUp">Call Us at 0317-4407634</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognized Section -->
+    <section class="recognized">
+        <div class="container">
+            <div class="recognized-content">
+                <h2 class="animate__animated animate__fadeInUp">Recognized for Excellence in Digital Marketing</h2>
+                <p class="animate__animated animate__fadeInUp">Our efficient digital marketing agency combines expertise in WordPress web design and SEO with a passion for delivering proven results. Dedicated to empowering businesses, we craft tailored strategies that drive measurable impact and growth. Whether it’s expanding your email list, boosting eCommerce sales, or enhancing social media engagement, we provide comprehensive services, including web design, SEO, PPC, and content marketing. Our global team of experts excels in creating innovative, custom solutions, steering clear of generic approaches. Built on the core values of relationships and results, we, at our affordable digital marketing services in Lahore, are committed to helping your business thrive with cutting-edge strategies and unmatched dedication.</p>
+            </div>
+
+            <div class="partners-grid">
+                <!-- Partner 1 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">Google Premier Partner</div>
+                <!-- Partner 2 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">Meta Business Partner</div>
+                <!-- Partner 3 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">Microsoft Advertising Partner</div>
+                <!-- Partner 4 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">Shopify Partner</div>
+                <!-- Partner 5 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">PHP</div>
+                <!-- Partner 6 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">Laravel</div>
+                <!-- Partner 7 -->
+                <div class="partner-logo animate__animated animate__fadeInUp">WooCommerce</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="#" class="cta-button animate__animated animate__fadeInUp">Rank Your Site Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-content">
+                <h2 class="animate__animated animate__fadeInUp">What Our Clients Are Saying</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate__animated animate__fadeInUp">
+                    <div class="testimonial-client">
+                        <img src="https://via.placeholder.com/70" alt="Client 1">
+                        <div class="testimonial-client-info">
+                            <h4>Hassan Raza</h4>
+                            <p>Outstanding Social Media Results!</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        We hired ABIZ Global Services to manage our social media campaigns, and the results were beyond expectations. Our follower count grew steadily, and engagement tripled within a month. Their creative team truly understands what works for our audience.
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate__animated animate__fadeInUp">
+                    <div class="testimonial-client">
+                        <img src="https://via.placeholder.com/70" alt="Client 2">
+                        <div class="testimonial-client-info">
+                            <h4>Ayesha Khan</h4>
+                            <p>Best SEO Service Provider</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        I was skeptical at first, but ABIZ Global Services proved me wrong. They optimized my website for local SEO, and now I'm ranking on page one for my main keywords. The team is responsive and knowledgeable.
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate__animated animate__fadeInUp">
+                    <div class="testimonial-client">
+                        <img src="https://via.placeholder.com/70" alt="Client 3">
+                        <div class="testimonial-client-info">
+                            <h4>Ali Ahmed</h4>
+                            <p>Professional & Reliable</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        From the very first consultation, ABIZ Global Services showed professionalism and a deep understanding of my business needs. They delivered on their promises and exceeded my expectations. Highly recommended!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeInUp">FAQ's</h2>
+
+            <div class="faq-grid">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to see results from digital marketing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Results vary depending on the strategy. SEO typically takes 3-6 months for organic results, while PPC can show results within days. Social media results can be seen within 1-3 months.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the difference between SEO and PPC?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SEO focuses on improving organic rankings for long-term results. PPC involves paid advertising for immediate traffic and visibility.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why is local SEO important for my business?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Local SEO helps your business appear in local searches, attracting nearby customers and driving foot traffic to physical locations.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer website maintenance services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide ongoing maintenance including updates, backups, and security checks to keep your website running smoothly.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you help with content creation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer content writing, blog posts, social media content, and more to engage your audience and boost SEO.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What industries do you specialize in?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We work with a variety of industries including Automotive, Legal, E-commerce, Education, Entertainment, Fashion, Finance, and Fitness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Real Results Section - Full Width -->
+    <section class="experience-results-full-width">
+        <div class="experience-results">
+            <div class="container">
+                <div class="experience-results-content">
+                    <h2 class="animate__animated animate__fadeInUp">Experience Real Results</h2>
+                    <p class="animate__animated animate__fadeInUp">Partner with ABIZ Internet Marketing Agency and scale your business.</p>
+                    <p class="animate__animated animate__fadeInUp">In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
+                    <img src="https://gmsdigitals.b-cdn.net/wp-content/uploads/2025/06/SEO-articles.png" alt="Contact with best digital agency in pakistan" class="experience-results-image">
+                </div>
+
+                <div class="experience-results-services">
+                    <div class="service-category">
+                        <h3>SEO</h3>
+                        <ul>
+                            <li>Local SEO</li>
+                            <li>Technical SEO</li>
+                            <li>Generative Engine Optimization GEO</li>
+                            <li>SEO Audit Services</li>
+                            <li>Link Building</li>
+                            <li>Ecommerce SEO</li>
+                            <li>Shopify SEO</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-category">
+                        <h3>Social Media</h3>
+                        <ul>
+                            <li>Social Media Management</li>
+                            <li>Social Media Advertising</li>
+                            <li>Social Media Brand Management</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-category">
+                        <h3>Web Design</h3>
+                        <ul>
+                            <li>Custom Website Design</li>
+                            <li>Wordpress Website Design</li>
+                            <li>Ecommerce Website Design</li>
+                            <li>Shopify Web Designers</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-category">
+                        <h3>PPC & Advertising</h3>
+                        <ul>
+                            <li>Search Engine Marketing</li>
+                            <li>Google Ads Management Services</li>
+                            <li>Youtube Advertising Services</li>
+                            <li>Lead Generation Services</li>
+                            <li>Franchise PPC Marketing</li>
+                            <li>Enterprise PPC Marketing</li>
+                            <li>Ecommerce PPC</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-category">
+                        <h3>Video & Content</h3>
+                        <ul>
+                            <li>Video Production Services</li>
+                            <li>Video Testimonial Services</li>
+                            <li>Product Photography</li>
+                            <li>Drone Video and Photography Services</li>
+                            <li>Content Writing</li>
+                            <li>Copywriting Services</li>
+                            <li>Ecommerce Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Company/Organization" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Website" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select>
+                                <option>Company Size</option>
+                                <option>1-10</option>
+                                <option>11-50</option>
+                                <option>51-200</option>
+                                <option>201+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="How did you hear about ABIZ Global Services?" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>What services can we provide you?</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="seo">
+                                    <label for="seo">SEO</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ppc">
+                                    <label for="ppc">PPC</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="social">
+                                    <label for="social">Social Media Organic</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="web">
+                                    <label for="web">Web Design</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="local">
+                                    <label for="local">Local SEO</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content">
+                                    <label for="content">Content Writing</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="photo">
+                                    <label for="photo">Photography / Video</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="hosting">
+                                    <label for="hosting">Web Hosting</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="amazon">
+                                    <label for="amazon">Amazon Marketing</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="email">
+                                    <label for="email">Email Marketing</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="ada">
+                                    <label for="ada">ADA Compliance</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="link">
+                                    <label for="link">Link Building</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <textarea placeholder="Tell us about your business" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <button type="submit" class="submit-button">Send My Free Proposal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <img src="assets/images/logo.png" alt="ABIZ GLOBAL SERVICES Logo" width="150">
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone-alt"></i> For Services 0317-4407634</p>
+                    <p><i class="fas fa-phone-alt"></i> For SEO Courses 0317-4407634</p>
+                    <p><i class="fas fa-phone-alt"></i> For HR and Finance 0317-4407634</p>
+                    <p><i class="fas fa-envelope"></i> gmsmarketingteam4@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Divine Mega 2, Ghazi Rd, Lahore</p>
+                </div>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li> <!-- Added Portfolio link -->
+                    <li><a href="#">Industries We Serve</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Digital Marketing Services</a></li>
+                    <li><a href="#">SEO Services</a></li>
+                    <li><a href="#">Web Design Services</a></li>
+                    <li><a href="#">PPC Services</a></li>
+                    <li><a href="#">Content Marketing Services</a></li>
+                    <li><a href="#">Social Media Services</a></li>
+                    <li><a href="#">Digital Advertising Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Have Project To discuss</h3>
+                <p>Ready to speak with a marketing expert? Give us a ring</p>
+                <p><strong>Call: 0317-4407634</strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ABIZ GLOBAL SERVICES. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/923174407634" target="_blank" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (hamburger && navMenu) { // Check if elements exist
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Header scroll effect
+            const mainHeader = document.getElementById('mainHeader');
+            function updateHeaderOnScroll() {
+                if (window.scrollY > 50) { // If scrolled down a bit
+                    mainHeader.classList.add('scrolled');
+                } else {
+                    mainHeader.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', updateHeaderOnScroll);
+            updateHeaderOnScroll(); // Initial check
+
+            // FAQ Interactive Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other open items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
