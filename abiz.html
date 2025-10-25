@@ -20,6 +20,8 @@
             --background-color: #FFFFFF;
             --text-color: #333333;
             --card-background: #F5F7FA;
+            --heading-color: #003366;
+            --paragraph-color: #666;
         }
         body.dark-theme {
             --primary-color: #00B4D8;
@@ -27,6 +29,8 @@
             --background-color: #121212;
             --text-color: #FFFFFF;
             --card-background: #1E1E1E;
+            --heading-color: #FFFFFF;
+            --paragraph-color: #CCCCCC;
         }
         body {
             font-family: 'Poppins', sans-serif; /* Changed font */
@@ -256,18 +260,18 @@
         }
         .proficiency-card i {
             font-size: 2.8rem; /* Bigger icon */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1rem; /* Increased gap */
         }
         .proficiency-card h3 {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 0.8rem; /* Increased gap */
             font-size: 1.5rem; /* Bigger font */
             font-weight: 600;
         }
         .proficiency-card p {
             font-size: 1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
         }
 
         /* Why Choose Us Section */
@@ -293,18 +297,18 @@
         }
         .why-choose-card i {
             font-size: 2.8rem; /* Bigger icon */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1.2rem; /* Increased gap */
         }
         .why-choose-card h3 {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1.2rem; /* Increased gap */
             font-size: 1.5rem; /* Bigger font */
             font-weight: 600;
         }
         .why-choose-card p {
             font-size: 1.1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
         }
 
         /* Challenges Section */
@@ -331,12 +335,12 @@
         }
         .challenge-item i {
             font-size: 2.2rem; /* Bigger icon */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1rem; /* Increased gap */
         }
         .challenge-item p {
             font-size: 1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
         }
 
         /* Success Stories Section */
@@ -374,14 +378,14 @@
             padding: 2rem; /* Increased padding */
         }
         .story-content h3 {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 0.8rem; /* Increased gap */
             font-size: 1.3rem; /* Bigger font */
             font-weight: 600;
         }
         .story-content p {
             font-size: 1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
         }
 
         /* Industries Section */
@@ -408,11 +412,11 @@
         }
         .industry-item i {
             font-size: 3.2rem; /* Bigger icon */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
         }
         .industry-item p {
             font-size: 1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
             text-align: center;
         }
 
@@ -489,13 +493,13 @@
         }
         .recognized-content h2 {
             font-size: 2.8rem; /* Bigger font */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1.5rem; /* Increased gap */
             font-weight: 600;
         }
         .recognized-content p {
             font-size: 1.3rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
             max-width: 800px; /* Wider */
             margin: 0 auto;
         }
@@ -533,7 +537,7 @@
         }
         .testimonials-content h2 {
             font-size: 2.8rem; /* Bigger font */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1.5rem; /* Increased gap */
             font-weight: 600;
         }
@@ -567,12 +571,12 @@
             object-fit: cover;
         }
         .testimonial-client-info h4 {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin: 0;
             font-size: 1.2rem; /* Bigger font */
         }
         .testimonial-client-info p {
-            color: #666;
+            color: var(--paragraph-color);
             margin: 0;
             font-size: 1rem; /* Bigger font */
         }
@@ -583,7 +587,7 @@
         }
         .testimonial-text {
             font-size: 1.1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
             line-height: 1.6; /* Increased line height */
         }
 
@@ -609,7 +613,7 @@
             background-color: #e9ecef; /* Lighter gray on hover */
         }
         .faq-question {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 0.8rem; /* Increased gap */
             font-size: 1.2rem; /* Bigger font */
             font-weight: 600;
@@ -618,7 +622,7 @@
             align-items: center;
         }
         .faq-answer {
-            color: #666;
+            color: var(--paragraph-color);
             font-size: 1rem; /* Bigger font */
             padding-top: 0.5rem;
             display: none; /* Hidden by default */
@@ -655,14 +659,14 @@
             transform: translateY(-8px); /* Reduced hover effect */
         }
         .portfolio-card h3 {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1rem; /* Increased gap */
             font-size: 1.4rem; /* Bigger font */
             font-weight: 600;
         }
         .portfolio-card p {
             font-size: 1rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
         }
 
         /* Experience Real Results Section - Full Width */
@@ -684,13 +688,13 @@
         }
         .experience-results-content h2 {
             font-size: 2.8rem; /* Bigger font */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 1.5rem; /* Increased gap */
             font-weight: 600;
         }
         .experience-results-content p {
             font-size: 1.3rem; /* Bigger font */
-            color: #666;
+            color: var(--paragraph-color);
             max-width: 800px; /* Wider */
             margin: 0 auto 2rem; /* Increased bottom margin */
         }
@@ -713,7 +717,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .service-category h3 {
-            color: #003366; /* Dark Blue Primary */
+            color: var(--heading-color);
             margin-bottom: 0.8rem; /* Increased gap */
             font-size: 1.3rem; /* Bigger font */
             font-weight: 600;
@@ -880,43 +884,20 @@
             transform: scale(1.1);
         }
 
-        /* Sticky CTA Sidebar */
-        .sticky-cta-container {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            z-index: 1002;
-            display: flex;
-            align-items: center;
-        }
-        .sticky-cta-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #003366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+        .whatsapp-link {
             animation: pulse 2s infinite;
-        }
-        .sticky-cta-button {
-            display: none;
-            padding: 10px 20px;
-            background-color: #003366;
-            color: white;
-            text-decoration: none;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         /* Animation Classes */
@@ -1767,14 +1748,6 @@
         </div>
     </footer>
 
-    <!-- Sticky Sidebar CTA -->
-    <div class="sticky-cta-container">
-        <div class="sticky-cta-icon">
-            <i class="fas fa-phone-alt"></i>
-        </div>
-        <a href="https://wa.me/923174407634" target="_blank" class="sticky-cta-button">Book a Call</a>
-    </div>
-
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
         <a href="https://wa.me/923174407634" target="_blank" class="whatsapp-link">
@@ -1820,17 +1793,6 @@
                     // Toggle current item
                     item.classList.toggle('active');
                 });
-            });
-
-            // Sticky CTA Logic
-            const ctaIcon = document.querySelector('.sticky-cta-icon');
-            const ctaButton = document.querySelector('.sticky-cta-button');
-            ctaIcon.addEventListener('click', () => {
-                if (ctaButton.style.display === 'block') {
-                    ctaButton.style.display = 'none';
-                } else {
-                    ctaButton.style.display = 'block';
-                }
             });
 
             // Typing Animation
