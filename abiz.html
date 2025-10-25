@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABIZ GLOBAL SERVICES - Digital Marketing Agency</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base Styles */
@@ -13,10 +14,24 @@
             padding: 0;
             box-sizing: border-box;
         }
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #00B4D8;
+            --background-color: #FFFFFF;
+            --text-color: #333333;
+            --card-background: #F5F7FA;
+        }
+        body.dark-theme {
+            --primary-color: #00B4D8;
+            --secondary-color: #003366;
+            --background-color: #121212;
+            --text-color: #FFFFFF;
+            --card-background: #1E1E1E;
+        }
         body {
             font-family: 'Poppins', sans-serif; /* Changed font */
-            color: #333333;
-            background-color: #FFFFFF;
+            color: var(--text-color);
+            background-color: var(--background-color);
             line-height: 1.6;
         }
         .container {
@@ -28,7 +43,7 @@
 
         /* Social Proof Bar */
         .social-proof-bar {
-            background-color: #003366; /* Dark Blue Primary */
+            background-color: var(--primary-color);
             color: white;
             padding: 0.5rem 0;
             position: sticky;
@@ -42,8 +57,8 @@
 
         /* Header & Navigation */
         header {
-            background-color: white; /* White background */
-            color: #003366; /* Blue text */
+            background-color: var(--background-color);
+            color: var(--primary-color);
             padding: 0.8rem 0; /* Reduced padding */
             position: sticky;
             top: 28px; /* Below social proof bar */
@@ -71,7 +86,7 @@
             flex-wrap: nowrap; /* Prevent wrapping on small screens */
         }
         .nav-menu a {
-            color: #003366; /* Blue text */
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1rem; /* Bigger font */
@@ -82,9 +97,9 @@
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         .nav-menu a:hover {
-            background-color: #003366; /* Blue background on hover */
-            color: white; /* White text on hover */
-            border-color: white; /* White border on hover */
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border-color: var(--background-color);
         }
         .cta-button-nav {
             display: inline-block;
@@ -114,9 +129,44 @@
         .bar {
             width: 20px; /* Smaller hamburger */
             height: 2px;
-            background-color: #003366; /* Blue bar */
+            background-color: var(--primary-color);
             margin: 3px 0;
             transition: 0.3s;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+        }
+        #theme-toggle {
+            display: none;
+        }
+        #theme-toggle + label {
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border-radius: 12.5px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #theme-toggle:checked + label {
+            background-color: var(--primary-color);
+        }
+        #theme-toggle + label::before {
+            content: '';
+            width: 21px;
+            height: 21px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        #theme-toggle:checked + label::before {
+            transform: translateX(25px);
         }
 
         /* Hero Section - Matching GMS exactly */
@@ -149,8 +199,8 @@
         }
         .cta-button-large {
             display: inline-block;
-            background-color: white; /* White fill */
-            color: #003366; /* Blue text */
+            background-color: var(--background-color);
+            color: var(--primary-color);
             padding: 14px 28px; /* Bigger button */
             text-decoration: none;
             border: 2px solid #003366; /* Blue border */
@@ -162,9 +212,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .cta-button-large:hover {
-            background-color: #003366; /* Blue background on hover */
-            color: white; /* White text on hover */
-            border-color: white; /* White border on hover */
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border-color: var(--background-color);
             transform: translateY(-2px);
         }
 
@@ -176,14 +226,14 @@
         .section-title {
             text-align: center;
             font-size: 2.8rem; /* Bigger font */
-            color: #003366; /* Dark Blue Primary */
+            color: var(--primary-color);
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
         .section-subtitle {
             text-align: center;
             font-size: 1.3rem; /* Bigger font */
-            color: #666;
+            color: var(--text-color);
             max-width: 800px; /* Wider */
             margin: 0 auto 3rem;
         }
@@ -193,11 +243,16 @@
             gap: 2.5rem; /* Increased gap */
         }
         .proficiency-card {
-            background-color: white;
+            background-color: var(--background-color);
             padding: 2rem; /* Reduced padding */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             border-top: 4px solid #00B4D8; /* Accent border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .proficiency-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         .proficiency-card i {
             font-size: 2.8rem; /* Bigger icon */
@@ -226,10 +281,15 @@
             gap: 2.5rem; /* Increased gap */
         }
         .why-choose-card {
-            background-color: #F5F7FA; /* Light Gray Background */
+            background-color: var(--card-background);
             padding: 2.5rem; /* Increased padding */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .why-choose-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         .why-choose-card i {
             font-size: 2.8rem; /* Bigger icon */
@@ -259,7 +319,7 @@
             margin-top: 2.5rem; /* Increased gap */
         }
         .challenge-item {
-            background-color: white;
+            background-color: var(--background-color);
             padding: 1.8rem; /* Increased padding */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
@@ -290,10 +350,15 @@
             gap: 2.5rem; /* Increased gap */
         }
         .story-card {
-            background-color: white;
+            background-color: var(--background-color);
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         .story-image {
             width: 100%;
@@ -324,12 +389,16 @@
             padding: 120px 0; /* Increased padding */
             background-color: #F5F7FA; /* Light Gray Background */
             text-align: center;
+            overflow: hidden;
+        }
+        .industries-grid-container {
+            width: 100%;
+            overflow: hidden;
         }
         .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Bigger items */
-            gap: 2.5rem; /* Increased gap */
-            margin-top: 2.5rem; /* Increased gap */
+            display: flex;
+            width: 200%;
+            animation: scroll 20s linear infinite;
         }
         .industry-item {
             display: flex;
@@ -345,6 +414,19 @@
             font-size: 1rem; /* Bigger font */
             color: #666;
             text-align: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .industries-grid:hover {
+            animation-play-state: paused;
         }
 
         /* Ready To Grow Section */
@@ -461,11 +543,16 @@
             gap: 2.5rem; /* Increased gap */
         }
         .testimonial-card {
-            background-color: white;
+            background-color: var(--background-color);
             padding: 2.5rem; /* Increased padding */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         .testimonial-client {
             display: flex;
@@ -558,11 +645,11 @@
             margin-top: 2.5rem; /* Increased gap */
         }
         .portfolio-card {
-            background-color: #F5F7FA; /* Light Gray Background */
+            background-color: var(--card-background);
             padding: 2rem; /* Increased padding */
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .portfolio-card:hover {
             transform: translateY(-8px); /* Reduced hover effect */
@@ -665,7 +752,7 @@
         .form-group textarea {
             width: 100%;
             padding: 14px; /* Bigger padding */
-            border: 1px solid #ccc;
+            border: 1px solid var(--text-color);
             border-radius: 5px;
             font-size: 1.1rem; /* Bigger font */
         }
@@ -703,8 +790,8 @@
 
         /* Footer */
         footer {
-            background-color: #003366; /* Dark Blue Primary */
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--background-color);
             padding: 3.5rem 0 2rem; /* Increased padding */
         }
         .footer-container {
@@ -791,6 +878,45 @@
         }
         .whatsapp-link:hover {
             transform: scale(1.1);
+        }
+
+        /* Sticky CTA Sidebar */
+        .sticky-cta-container {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+        }
+        .sticky-cta-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #003366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            animation: pulse 2s infinite;
+        }
+        .sticky-cta-button {
+            display: none;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            text-decoration: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         /* Animation Classes */
@@ -909,7 +1035,7 @@
         <div class="container nav-container">
             <div class="logo">
                 <!-- Replace 'logo.png' with your actual logo file path -->
-                <img src="assets/images/logo.png" alt="ABIZ GLOBAL SERVICES Logo" width="150">
+                <img src="assets/images/logo.png" alt="ABIZ GLOBAL SERVICES Logo" width="150" loading="lazy">
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
@@ -919,7 +1045,10 @@
                 <li><a href="#contact">Contact Us</a></li>
                 <li><a href="#case-studies">Case Studies</a></li>
             </ul>
-            <a href="#" class="cta-button-nav">BOOK YOUR FREE STRATEGY CALL</a> <!-- Added CTA button -->
+            <div class="theme-switcher">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle"></label>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -931,7 +1060,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content animate__animated animate__fadeInUp">
-            <h1>Experience Real Results</h1>
+            <h1><span id="typed-text"></span></h1>
             <p>Partner with ABIZ GLOBAL SERVICES and scale your business.</p>
             <p class="hero-call">In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
             <a href="#" class="cta-button-large">Rank Your Site Today</a>
@@ -1122,53 +1251,88 @@
         <div class="container">
             <h2 class="section-title animate__animated animate__fadeInUp">Industries We Serve</h2>
 
-            <div class="industries-grid">
-                <!-- Industry 1 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-car"></i>
-                    <p>AUTOMOTIVE</p>
-                </div>
+            <div class="industries-grid-container">
+                <div class="industries-grid">
+                    <!-- Industry 1 -->
+                    <div class="industry-item">
+                        <i class="fas fa-car"></i>
+                        <p>AUTOMOTIVE</p>
+                    </div>
 
-                <!-- Industry 2 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-headset"></i>
-                    <p>LEGAL & CONSULTING</p>
-                </div>
+                    <!-- Industry 2 -->
+                    <div class="industry-item">
+                        <i class="fas fa-headset"></i>
+                        <p>LEGAL & CONSULTING</p>
+                    </div>
 
-                <!-- Industry 3 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p>E-COMMERCE & RETAIL</p>
-                </div>
+                    <!-- Industry 3 -->
+                    <div class="industry-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>E-COMMERCE & RETAIL</p>
+                    </div>
 
-                <!-- Industry 4 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-graduation-cap"></i>
-                    <p>EDUCATION & E-LEARNING</p>
-                </div>
+                    <!-- Industry 4 -->
+                    <div class="industry-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>EDUCATION & E-LEARNING</p>
+                    </div>
 
-                <!-- Industry 5 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-film"></i>
-                    <p>ENTERTAINMENT & MEDIA</p>
-                </div>
+                    <!-- Industry 5 -->
+                    <div class="industry-item">
+                        <i class="fas fa-film"></i>
+                        <p>ENTERTAINMENT & MEDIA</p>
+                    </div>
 
-                <!-- Industry 6 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-tshirt"></i>
-                    <p>FASHION & BEAUTY</p>
-                </div>
+                    <!-- Industry 6 -->
+                    <div class="industry-item">
+                        <i class="fas fa-tshirt"></i>
+                        <p>FASHION & BEAUTY</p>
+                    </div>
 
-                <!-- Industry 7 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-dollar-sign"></i>
-                    <p>FINANCE & INSURANCE</p>
-                </div>
+                    <!-- Industry 7 -->
+                    <div class="industry-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p>FINANCE & INSURANCE</p>
+                    </div>
 
-                <!-- Industry 8 -->
-                <div class="industry-item animate__animated animate__fadeInUp">
-                    <i class="fas fa-dumbbell"></i>
-                    <p>FITNESS & SPORTS</p>
+                    <!-- Industry 8 -->
+                    <div class="industry-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <p>FITNESS & SPORTS</p>
+                    </div>
+                    <!-- Duplicated for seamless scroll -->
+                    <div class="industry-item">
+                        <i class="fas fa-car"></i>
+                        <p>AUTOMOTIVE</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-headset"></i>
+                        <p>LEGAL & CONSULTING</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>E-COMMERCE & RETAIL</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>EDUCATION & E-LEARNING</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-film"></i>
+                        <p>ENTERTAINMENT & MEDIA</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-tshirt"></i>
+                        <p>FASHION & BEAUTY</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p>FINANCE & INSURANCE</p>
+                    </div>
+                    <div class="industry-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <p>FITNESS & SPORTS</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1230,7 +1394,7 @@
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card animate__animated animate__fadeInUp">
                     <div class="testimonial-client">
-                        <img src="https://via.placeholder.com/70" alt="Client 1">
+                        <img src="https://source.unsplash.com/random/70x70/?portrait&1" alt="Client 1" loading="lazy">
                         <div class="testimonial-client-info">
                             <h4>Hassan Raza</h4>
                             <p>Outstanding Social Media Results!</p>
@@ -1251,7 +1415,7 @@
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card animate__animated animate__fadeInUp">
                     <div class="testimonial-client">
-                        <img src="https://via.placeholder.com/70" alt="Client 2">
+                        <img src="https://source.unsplash.com/random/70x70/?portrait&2" alt="Client 2" loading="lazy">
                         <div class="testimonial-client-info">
                             <h4>Ayesha Khan</h4>
                             <p>Best SEO Service Provider</p>
@@ -1272,7 +1436,7 @@
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card animate__animated animate__fadeInUp">
                     <div class="testimonial-client">
-                        <img src="https://via.placeholder.com/70" alt="Client 3">
+                        <img src="https://source.unsplash.com/random/70x70/?portrait&3" alt="Client 3" loading="lazy">
                         <div class="testimonial-client-info">
                             <h4>Ali Ahmed</h4>
                             <p>Professional & Reliable</p>
@@ -1373,10 +1537,10 @@
         <div class="experience-results">
             <div class="container">
                 <div class="experience-results-content">
-                    <h2 class="animate__animated animate__fadeInUp">Experience Real Results</h2>
+                    <h2 class="section-title animate__animated animate__fadeInUp">Contact Us</h2>
                     <p class="animate__animated animate__fadeInUp">Partner with ABIZ Internet Marketing Agency and scale your business.</p>
                     <p class="animate__animated animate__fadeInUp">In a hurry? Give us a call now at <strong>0317-4407634</strong></p>
-                    <img src="https://gmsdigitals.b-cdn.net/wp-content/uploads/2025/06/SEO-articles.png" alt="Contact with best digital agency in pakistan" class="experience-results-image">
+                    <img src="https://gmsdigitals.b-cdn.net/wp-content/uploads/2025/06/SEO-articles.png" alt="Contact with best digital agency in pakistan" class="experience-results-image" loading="lazy">
                 </div>
 
                 <div class="experience-results-services">
@@ -1552,7 +1716,7 @@
     <footer>
         <div class="container footer-container">
             <div class="footer-column">
-                <img src="assets/images/logo.png" alt="ABIZ GLOBAL SERVICES Logo" width="150">
+                <img src="assets/images/logo.png" alt="ABIZ GLOBAL SERVICES Logo" width="150" loading="lazy">
                 <div class="footer-contact">
                     <p><i class="fas fa-phone-alt"></i> For Services 0317-4407634</p>
                     <p><i class="fas fa-phone-alt"></i> For SEO Courses 0317-4407634</p>
@@ -1603,6 +1767,14 @@
         </div>
     </footer>
 
+    <!-- Sticky Sidebar CTA -->
+    <div class="sticky-cta-container">
+        <div class="sticky-cta-icon">
+            <i class="fas fa-phone-alt"></i>
+        </div>
+        <a href="https://wa.me/923174407634" target="_blank" class="sticky-cta-button">Book a Call</a>
+    </div>
+
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">
         <a href="https://wa.me/923174407634" target="_blank" class="whatsapp-link">
@@ -1648,6 +1820,47 @@
                     // Toggle current item
                     item.classList.toggle('active');
                 });
+            });
+
+            // Sticky CTA Logic
+            const ctaIcon = document.querySelector('.sticky-cta-icon');
+            const ctaButton = document.querySelector('.sticky-cta-button');
+            ctaIcon.addEventListener('click', () => {
+                if (ctaButton.style.display === 'block') {
+                    ctaButton.style.display = 'none';
+                } else {
+                    ctaButton.style.display = 'block';
+                }
+            });
+
+            // Typing Animation
+            var options = {
+                strings: ['Experience Real Results', 'Scale Your Business', 'Rank Your Site Today'],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true
+            };
+            var typed = new Typed('#typed-text', options);
+
+            // Theme Switcher Logic
+            const themeToggle = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme) {
+                document.body.classList.add(currentTheme);
+                if (currentTheme === 'dark-theme') {
+                    themeToggle.checked = true;
+                }
+            }
+
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    document.body.classList.add('dark-theme');
+                    localStorage.setItem('theme', 'dark-theme');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                    localStorage.setItem('theme', 'light-theme');
+                }
             });
         });
     </script>
